@@ -4,6 +4,8 @@ Excel Data Processor
 
 Console application that reads an Excel file and calculates
 the average value in column C.
+
+Version: 1.0.0
 """
 
 import sys
