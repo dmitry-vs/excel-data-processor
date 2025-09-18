@@ -21,6 +21,9 @@ excel-analyzer = "main:main"
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
 [tool.uv]
 dev-dependencies = [
     "pytest>=7.0.0",
