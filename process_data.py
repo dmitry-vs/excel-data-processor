@@ -70,12 +70,7 @@ def main():
     average = calculate_average(column_c_data)
     
     # Display results
-    print(f"\nResults:")
-    print(f"Number of values: {len(column_c_data)}")
-    print(f"Average value: {average:.2f}")
-    print(f"Sum: {sum(column_c_data):.2f}")
-    print(f"Min: {min(column_c_data):.2f}")
-    print(f"Max: {max(column_c_data):.2f}")
+    print(f"\nAverage value: {average:.2f}")
 
 
 if __name__ == "__main__":
