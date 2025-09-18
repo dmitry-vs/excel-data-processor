@@ -4,8 +4,6 @@ Excel Data Processor
 
 Console application that reads an Excel file and calculates
 the average value in column C.
-
-Version: 1.0.0
 """
 
 import sys
@@ -16,8 +14,6 @@ def read_excel_file(file_path: str) -> pd.DataFrame:
     """Read Excel file and return DataFrame."""
     try:
         df = pd.read_excel(file_path)
-        print(f"Successfully loaded Excel file: {file_path}")
-        print(f"Shape: {df.shape[0]} rows, {df.shape[1]} columns")
         return df
     except FileNotFoundError:
         print(f"Error: File '{file_path}' not found.")
@@ -42,7 +38,6 @@ def get_column_c_data(df: pd.DataFrame) -> list:
         print("Error: No numeric data found in column C.")
         sys.exit(1)
     
-    print(f"Found {len(numeric_data)} numeric values in column C")
     return numeric_data.tolist()
 
 
@@ -55,9 +50,6 @@ def calculate_average(data: list) -> float:
 
 def main():
     """Main application entry point."""
-    print("Excel Data Processor")
-    print("=" * 30)
-    
     # Read Excel file
     excel_file = "input.xlsx"
     df = read_excel_file(excel_file)
@@ -65,19 +57,11 @@ def main():
     # Get column C data
     column_c_data = get_column_c_data(df)
     
-    print(f"\nData from column C: {column_c_data[:10]}{'...' if len(column_c_data) > 10 else ''}")
-    
     # Calculate average
-    print("\nCalculating average...")
     average = calculate_average(column_c_data)
     
-    # Display results
-    print(f"\nResults:")
-    print(f"Number of values: {len(column_c_data)}")
-    print(f"Average value: {average:.2f}")
-    print(f"Sum: {sum(column_c_data):.2f}")
-    print(f"Min: {min(column_c_data):.2f}")
-    print(f"Max: {max(column_c_data):.2f}")
+    # Display only the average value
+    print(f"{average:.2f}")
 
 
 if __name__ == "__main__":
