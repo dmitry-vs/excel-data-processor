@@ -1,7 +1,7 @@
 [project]
-name = "excel-gigachat-analyzer"
+name = "excel-data-processor"
 version = "0.1.0"
-description = "Console application to analyze Excel data using GigaChat API"
+description = "Console application to process Excel data and calculate statistics"
 authors = [
     {name = "Your Name", email = "your.email@example.com"}
 ]
@@ -10,12 +10,10 @@ requires-python = ">=3.8"
 dependencies = [
     "pandas>=2.0.0",
     "openpyxl>=3.1.0",
-    "python-dotenv>=1.0.0",
-    "gigachat>=0.1.0",
 ]
 
 [project.scripts]
-excel-analyzer = "main:main"
+data-processor = "process_data:main"
 
 [build-system]
 requires = ["hatchling"]
